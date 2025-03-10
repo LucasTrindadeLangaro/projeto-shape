@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acompanhamento Bulking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Acompanhamento Bulking</h1>
+            <button id="btnLogout" class="btn-logout">Sair</button>
+        </header>
+        
+        <main>
+            <!-- Seção de Administração -->
+            <section class="admin-section admin-only">
+                <h2>Administração</h2>
+                <div class="users-list-container">
+                    <h3>Usuários</h3>
+                    <ul id="usersList" class="users-list"></ul>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <h2>Adicionar Novo Registro</h2>
+                <form id="bulkingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="data">Data:</label>
+                            <input type="date" id="data" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="peso">Peso (kg):</label>
+                            <input type="number" id="peso" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <h3>Medidas Corporais</h3>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="peito">Peito (cm):</label>
+                            <input type="number" id="peito" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cintura">Cintura (cm):</label>
+                            <input type="number" id="cintura" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ombro_esquerdo">Ombro Esquerdo (cm):</label>
+                            <input type="number" id="ombro_esquerdo" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ombro_direito">Ombro Direito (cm):</label>
+                            <input type="number" id="ombro_direito" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="largura_ombros">Largura dos Ombros (cm):</label>
+                            <input type="number" id="largura_ombros" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="braco_direito">Braço Direito (cm):</label>
+                            <input type="number" id="braco_direito" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="braco_esquerdo">Braço Esquerdo (cm):</label>
+                            <input type="number" id="braco_esquerdo" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="antebraco_direito">Antebraço Direito (cm):</label>
+                            <input type="number" id="antebraco_direito" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="antebraco_esquerdo">Antebraço Esquerdo (cm):</label>
+                            <input type="number" id="antebraco_esquerdo" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="perna_direita">Perna Direita (cm):</label>
+                            <input type="number" id="perna_direita" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="perna_esquerda">Perna Esquerda (cm):</label>
+                            <input type="number" id="perna_esquerda" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="panturrilha_direita">Panturrilha Direita (cm):</label>
+                            <input type="number" id="panturrilha_direita" step="0.1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="panturrilha_esquerda">Panturrilha Esquerda (cm):</label>
+                            <input type="number" id="panturrilha_esquerda" step="0.1" required>
+                        </div>
+                    </div>
+
+                    <button type="submit">Adicionar</button>
+                </form>
+            </section>
+
+            <section class="data-section">
+                <h2>Registros</h2>
+                <div class="table-container">
+                    <table id="registrosTable">
+                        <thead>
+                            <tr>
+                                <th class="admin-only">Usuário</th>
+                                <th>Data</th>
+                                <th>Peso</th>
+                                <th>Peito</th>
+                                <th>Cintura</th>
+                                <th>Ombro E</th>
+                                <th>Ombro D</th>
+                                <th>Larg. Ombros</th>
+                                <th>Braço D</th>
+                                <th>Braço E</th>
+                                <th>Anteb. D</th>
+                                <th>Anteb. E</th>
+                                <th>Perna D</th>
+                                <th>Perna E</th>
+                                <th>Pant. D</th>
+                                <th>Pant. E</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="registrosBody">
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Configuração e scripts da aplicação -->
+    <script src="firebase-config.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
